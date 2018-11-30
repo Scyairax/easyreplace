@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const PORT = 3000 || process.env.PORT;
 
-require('./routers/routers.js')(app, express);
+require('./routes/router.js')(app, express);
 require('../server/config/db.js');
 
 app.listen(PORT,  () => {
