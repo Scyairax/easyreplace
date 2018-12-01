@@ -1,36 +1,36 @@
 module.exports = (function () {
-    var Utente = require('./Auto')
+    var Auto = require('./Auto')
 
-    var creaUtente = (req, res) => {
-        var creautente = new Utente(req.body);
+    var creaAuto = (req, res) => {
+        var creaAuto = new Auto(req.body);
         console.log(req.body);
-        creautente.save().then(data => res.json(data))
+        creaAuto.save().then(data => res.json(data))
             .catch(err => res.json(err))
     }
 
-    var eliminaUtente = (req, res) => {
+    var eliminaAuto = (req, res) => {
         var id = req.params.id;
-        Utente.findByIdAndDelete(id)
+        Auto.findByIdAndDelete(id)
             .then(data => res.json(data)
             ).catch(err => res.json(err))
     }
 
-    var modificaUtente = async (req, res) => {
+    var modificaAuto = async (req, res) => {
         try {
             var id = req.params.id;
             var body = req.body;
-            var modificaUtente = await Utente.findByIdAndUpdate(id, body)
-            res.json(modificaUtente)
+            var modificaAuto = await Auto.findByIdAndUpdate(id, body)
+            res.json(modificaAuto)
         }
         catch (err) {
             console.log(err)
         }
     }
 
-    var listaUtenti = async (req, res) => {
+    var listaAuto = async (req, res) => {
         try {
-            var utenti = await Utente.find()
-            res.json(utenti)
+            var auto = await Auto.find()
+            res.json(auto)
         }
         catch (err) {
             res.json(err)
@@ -39,11 +39,11 @@ module.exports = (function () {
 
     }
 
-    var cercaUtente = async (req, res) => {
+    var cercaAuto = async (req, res) => {
         try {
             var id = req.params.id;
-            var cercautente = await Utente.findById(id)
-            res.json(cercautente)
+            var cercaAuto = await Auto.findById(id)
+            res.json(cercaAuto)
         }
         catch (err) {
             console.log(err)
@@ -55,11 +55,11 @@ module.exports = (function () {
 
 
     return {
-        creaUtente: creaUtente,
-        eliminaUtente: eliminaUtente,
-        modificaUtente: modificaUtente,
-        listaUtenti: listaUtenti,
-        cercaUtente: cercaUtente
+        creaAuto: creaAuto,
+        eliminaAuto: eliminaAuto,
+        modificaAuto: modificaAuto,
+        listaAuto: listaAuto,
+        cercaAuto: cercaAuto
     }
 
 })()

@@ -39,9 +39,9 @@ var autoSchema = new mongoose.Schema({
         index: true,
         lowercase: true
     },
-    tipo_ricambio: [{
+    ricambio: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "tipo_ricambi"
+        ref: "Ricambio"
 
     }]
 })
