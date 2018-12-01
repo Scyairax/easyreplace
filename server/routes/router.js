@@ -7,5 +7,6 @@ module.exports = function (app, express){
    //   }) 
       
       app.use('/utenti', require('../resource/utenti/index.js'));
+      app.use('/auto', require('../resource/auto/index'));
   }
 //questa configurazione permette di lanciare nodemon solo tramite npm run dev "dev": "nodemon server/index.js", 
