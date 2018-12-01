@@ -5,7 +5,7 @@ module.exports = function (app, express){
     //  app.get('/', (req, res) => {
     //      res.send('ciao mondo');
    //   }) 
-      //questo è referenziato con movies
-    
+      
+      app.use('/utenti', require('../resource/utenti/index.js'));
   }
 //questa configurazione permette di lanciare nodemon solo tramite npm run dev "dev": "nodemon server/index.js", 
