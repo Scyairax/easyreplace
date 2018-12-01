@@ -42,7 +42,8 @@ var utenteSchema = new mongoose.Schema({
         type: String,
         index: true,
         validate: function () {
-            return this.codice_fiscale.lenght == 16
+            if (!this.codice_fiscale) return true
+            return this.codice_fiscale.length === 16;
         },
         lowercase: true
     },
@@ -50,7 +51,8 @@ var utenteSchema = new mongoose.Schema({
         type: String,
         index: true,
         validate: function () {
-            return this.codice_fiscale.lenght == 11
+            if (!this.p_iva) return true
+            return this.p_iva.length===11
         },
         lowercase: true
     },
@@ -79,8 +81,8 @@ var utenteSchema = new mongoose.Schema({
         type: String,
         index: true,
         required: true,
-        validate: function () {
-            return this.cap.lenght == 5
+        validate: function () {   
+            return this.cap.length === 5;
         },
         lowercase: true
     },
@@ -99,4 +101,4 @@ var utenteSchema = new mongoose.Schema({
 
 
 })
-module.exports = moongose.model("utente", utenteSchema, "utente")
+module.exports = mongoose.model("utente", utenteSchema, "utente")
