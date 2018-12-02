@@ -8,11 +8,12 @@ var ricambioSchema = new mongoose.Schema({
         index: true,
         lowercase: true
     },
-    // tipo_pezzo: {
-    //     type: String,
-    //     index: true,
-    //     lowercase: true
-    // },
+    
+     tipo_ricambio: {
+         type: mongoose.Schema.Types.ObjectId,
+         ref: "TipoRicambi",
+         lowercase: true
+     },
     cod_pezzo: {
 
         type: String,

@@ -13,6 +13,6 @@ router.get('/', controller.listaRicambi);
 
 router.delete('/:id([a-z0-9]{24})', controller.eliminaRicambio);
 
-
+router.put('/:id([a-z0-9]{24})', controller.modificaRicambio);
 
     module.exports = router;

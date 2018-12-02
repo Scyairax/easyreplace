@@ -2,6 +2,18 @@ module.exports = (function() {
     var Ricambio = require('./Ricambio')
 
 
+    var modificaRicambio = async (req, res) => {
+        try {
+            var id = req.params.id;
+            var body = req.body;
+            var modificaricambio = await Ricambio.findByIdAndUpdate(id,body)
+              res.json(modificaricambio)
+        }
+        catch (err) {
+            console.log(err)
+          }
+      }
+
     var eliminaRicambio = (req, res) => {
         var id = req.params.id;
         Ricambio.findByIdAndDelete(id)
@@ -44,7 +56,8 @@ module.exports = (function() {
         creaRicambi: creaRicambi,
         cercaRicambio: cercaRicambio,
         listaRicambi: listaRicambi,
-        eliminaRicambio:eliminaRicambio
+        eliminaRicambio: eliminaRicambio,
+        modificaRicambio:modificaRicambio
     }
 
 })()
