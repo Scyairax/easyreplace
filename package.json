@@ -10,6 +10,7 @@
   "author": "andrea cattarozzi, alessio ciraci, ivan ricci",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.7.5",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongoose": "^5.3.14"
