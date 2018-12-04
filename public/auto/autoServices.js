@@ -5,9 +5,25 @@ var listaAuto = function(){
         method:'GET',
     })
 }
+var creaAuto = function(nuovo){
+    return $http({
+        url:'/auto',
+        method:'POST',
+        data: nuovo
+    })
+}
+
+var eliminaAuto = function(id) {
+    return $http({
+        url: '/auto/'+ id,
+        method: 'DELETE',
+    })
+}
 
     
 return {
 listaAuto:listaAuto,
+creaAuto:creaAuto,
+eliminaAuto: eliminaAuto,
 }
 })

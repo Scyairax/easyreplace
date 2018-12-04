@@ -9,7 +9,74 @@
 </head>
 
 <body ng-app="app" ng-controller="autoController">
-    {{2+4}}
+ 
+ 
+ 
+    <form ng-submit="inserisci()">
+        <label>Modello</label>
+        <input type="text" ng-model="nuovaauto.modello">
+
+        <label>Marca</label>
+        <input type="text" ng-model="nuovaauto.marca">
+
+        <label>Numero porte</label>
+        <select name="" id="" ng-model="nuovaauto.n_porte">
+            <option disabled>Seleziona versione</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="7">7</option>
+        </select>
+
+        <label>Colore</label>
+        <input type="text" ng-model="nuovaauto.colore">
+
+        <label>Versione</label>
+            <select name="" id="" ng-model="nuovaauto.versione">
+                <option  disabled>Seleziona versione</option>
+                <option value="multijet">multijet</option>
+                <option value="ds">ds</option>
+                <option value="abarth">abarth</option>
+            </select>
+
+        <label>Alimentazione</label>
+        <input type="text" ng-model="nuovaauto.alimentazione">
+
+        <label>Cilindrata</label>
+        <input type="text" ng-model="nuovaauto.cilindrata">
+<button type="submit">invia</button>
+ </form>
+
+<table>
+    <thead>
+<tr>
+    <td>modello</td>
+    <td>marca</td>
+    <td>porte</td>
+    <td>colore</td>
+    <td>versione</td>
+    <td>alimentazione</td>
+    <td>cilindrata</td>
+    <td>elimina auto</td>
+    <td>modifica auto</td>
+
+</tr>
+    </thead>
+    <tbody>
+<tr ng-repeat="el in auto">
+    <td ng-bind="el.modello"></td>
+    <td ng-bind="el.marca"></td>
+    <td ng-bind="el.porte"></td>
+    <td ng-bind="el.colore"></td>
+    <td ng-bind="el.versione"></td>
+    <td ng-bind="el.alimentazione"></td>
+    <td ng-bind="el.cilindrata"></td>
+    <td><button ng-click="eliminaAuto(el._id)">Elimina</button></td>
+
+</tr>
+    </tbody>
+</table>
+
+
 </body>
 <script src="/angular/angular.min.js"></script>
 <script src="/public/app/app.js"></script>
