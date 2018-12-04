@@ -12,12 +12,16 @@ angular.module('app').controller('autoController', function ($scope, auto, autoS
     }
 
 
-    // $scope.inserisci = function () {
-    //     autoService.creaAuto($scope.nuovaauto)
-    //         .then(response => {
-    //            $state.go('auto')
-    //         })
-    // }
+    $scope.modificaAuto = function () {
+        autoService.modificaAuto($scope.auto, $scope.auto._id)
+            .then(response => {
+                $state.go('auto')
+            })
+            .then(response => {
+                $scope.auto = response.data
+            })
+    }
+
 
 
 

@@ -1,13 +1,13 @@
 angular.module('app').controller('autosController', function ($scope, auto, autoService) {
 
     $scope.auto = auto
-  
+
 
 
     $scope.eliminaAuto = function (id) {
         autoService.eliminaAuto(id)
             .then(response => {
-               return autoService.listaAuto()
+                return autoService.listaAuto()
             })
             .then(response => {
                 $scope.auto = response.data
@@ -15,12 +15,16 @@ angular.module('app').controller('autosController', function ($scope, auto, auto
     }
 
 
-    // $scope.inserisci = function () {
-    //     autoService.creaAuto($scope.nuovaauto)
-    //         .then(response => {
-    //             init()
-    //         })
-    // }
-
+    $scope.creaAuto = function () {
+        autoService.creaAuto($scope.nuovaauto)
+            .then(response => {
+                return autoService.listaAuto()
+            })
+            .then(response => {
+                $scope.auto = response.data
+            })
+    }
+    
+   
 
 })
