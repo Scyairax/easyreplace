@@ -1,5 +1,8 @@
 angular.module('app').controller('autoController', function ($scope, autoService){
 
+
+    $scope.auto= []
+
 function init() {  
 
     autoService.listaAuto().then(risposta =>{
@@ -26,5 +29,10 @@ autoService.eliminaAuto(id)
     init()
 })
 }
+
+
+
+
+
 
 })

@@ -9,8 +9,9 @@ module.exports = function (app, express) {
   })
 
   app.use('/angular', express.static(path.join(__dirname, '..', '..', 'node_modules', 'angular')))
+  app.use('/dist', express.static(path.join(__dirname, '..', '..', 'node_modules', 'bootstrap','dist')))
   app.use('/public', express.static(path.join(__dirname, '..', '..', 'public')))
-
+  app.use('/ui-router', express.static(path.join(__dirname, '..', '..', 'node_modules', '@uirouter', 'angularjs','release')))
 
 
   app.use('/ricambi', require('../resource/ricambi/index.js'));

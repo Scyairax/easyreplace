@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/dist/css/bootstrap.min.css">
     <title>Document</title>
 </head>
 
 <body ng-app="app" ng-controller="autoController">
- 
- 
- 
+
+
+
+    <div ng-include="'public/navbar.html'"></div>
+    <br><br><br>
     <form ng-submit="inserisci()">
         <label>Modello</label>
         <input type="text" ng-model="nuovaauto.modello">
@@ -31,56 +34,73 @@
         <input type="text" ng-model="nuovaauto.colore">
 
         <label>Versione</label>
-            <select name="" id="" ng-model="nuovaauto.versione">
-                <option  disabled>Seleziona versione</option>
-                <option value="multijet">multijet</option>
-                <option value="ds">ds</option>
-                <option value="abarth">abarth</option>
-            </select>
+        <select name="" id="" ng-model="nuovaauto.versione">
+            <option disabled>Seleziona versione</option>
+            <option value="multijet">multijet</option>
+            <option value="ds">ds</option>
+            <option value="abarth">abarth</option>
+        </select>
 
         <label>Alimentazione</label>
         <input type="text" ng-model="nuovaauto.alimentazione">
 
         <label>Cilindrata</label>
         <input type="text" ng-model="nuovaauto.cilindrata">
-<button type="submit">invia</button>
- </form>
+        <button type="submit">invia</button>
+    </form>
+    <hr>
+    <br>
+    <label>Filtro</label>
+    <input type="text" ng-model="filtra">
+    <select ng-model="versione">
+        <option default value="">Tutte</option>
+        <option value="multijet">multijet</option>
+        <option value="ds">ds</option>
+        <option value="abarth">abarth</option>
+    </select>
+    <br>
+    <hr>
 
-<table>
-    <thead>
-<tr>
-    <td>modello</td>
-    <td>marca</td>
-    <td>porte</td>
-    <td>colore</td>
-    <td>versione</td>
-    <td>alimentazione</td>
-    <td>cilindrata</td>
-    <td>elimina auto</td>
-    <td>modifica auto</td>
 
-</tr>
-    </thead>
-    <tbody>
-<tr ng-repeat="el in auto">
-    <td ng-bind="el.modello"></td>
-    <td ng-bind="el.marca"></td>
-    <td ng-bind="el.porte"></td>
-    <td ng-bind="el.colore"></td>
-    <td ng-bind="el.versione"></td>
-    <td ng-bind="el.alimentazione"></td>
-    <td ng-bind="el.cilindrata"></td>
-    <td><button ng-click="eliminaAuto(el._id)">Elimina</button></td>
+    <table>
+        <thead>
+            <tr>
+                <td>modello</td>
+                <td>marca</td>
+                <td>porte</td>
+                <td>colore</td>
+                <td>versione</td>
+                <td>alimentazione</td>
+                <td>cilindrata</td>
+                <td>elimina auto</td>
+                <td>modifica auto</td>
 
-</tr>
-    </tbody>
-</table>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="el in auto | filtraVersione : versione">
+                <td ng-bind="el.modello"></td>
+                <td ng-bind="el.marca | maiuscolo"></td>
+                <td ng-bind="el.porte"></td>
+                <td ng-bind="el.colore"></td>
+                <td ng-bind="el.versione"></td>
+                <td ng-bind="el.alimentazione"></td>
+                <td ng-bind="el.cilindrata"></td>
+                <td><button ng-click="eliminaAuto(el._id)">Elimina</button></td>
+
+            </tr>
+        </tbody>
+    </table>
 
 
 </body>
+<script src="/dist/js/bootstrap.min.js"></script>
 <script src="/angular/angular.min.js"></script>
+<script src="/ui-router/angular-ui-router.min.js"></script>
+
 <script src="/public/app/app.js"></script>
 <script src="/public/auto/autoController.js"></script>
 <script src="/public/auto/autoServices.js"></script>
+<script src="/public/app/filter.js"></script>
 
 </html>
