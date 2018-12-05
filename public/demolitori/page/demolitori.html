@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="col-8 table-responsive">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Foto</th>
+                    <th scope="col">Denominazione</th>
+                    <th scope="col">Partita iva</th>
+                    <th scope="col">Comune</th>
+                    <th scope="col">Indirizzo</th>
+                    <th scope="col">Provincia</th>
+                    <th scope="col">Cap</th>
+                    <th scope="col">Email</th>                    
+                    <th scope="col">Officina</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- auto è stato definito nel controller mentre autos è un elemento generico -->
+                <tr ng-repeat="demolitore1 in demolitore track by $index">
+                    <td ng-bind='demolitore1.foto'></td>
+                    <td ng-bind='demolitore1.denominazione'></td>
+                    <td ng-bind='demolitore1.p_iva'></td>
+                    <td ng-bind='demolitore1.comune'></td>
+                    <td ng-bind='demolitore1.indirizzo'></td>
+                    <td ng-bind='demolitore1.provincia'></td>
+                    <td ng-bind='demolitore1.cap'></td>
+                    <td ng-bind='demolitore1.email'></td>
+                    <td ng-bind='demolitore1.officina'></td>
+                    <td><a class="btn btn-primary" ui-sref="demolitoredettaglio({id:demolitore1._id})"> Dettaglio</a></td>
+                    <td><button class="btn btn-primary" ng-click="eliminaDemolitore(demolitore1._id)">Elimina</button></td>
+                </tr>
+            </tbody>
+        
+        </table>
+
+    </div>
+    <div class="col-4">
+        <form ng-submit="creaDemolitore()">
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label for="denominazione">Denominazione</label>
+                    <input type="text" class="form-control" id="denominazione" ng-model="nuovodemolitore.denominazione">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="p_iva">Partita iva</label>
+                    <input type="text" class="form-control" id="p_iva" ng-model="nuovodemolitore.p_iva">
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label for="comune">Comune</label>
+                    <input type="text" class="form-control" id="comune" ng-model="nuovodemolitore.comune">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="indirizzo">Indirizzo</label>
+                    <input type="text" class="form-control" id="indirizzo" ng-model="nuovodemolitore.indirizzo">
+                </div>
+            </div>
+
+            <div class="form-row">
+            
+                <div class="form-group col-md-6">
+                    <label for="provincia">Provincia</label>
+                    <input type="text" class="form-control" id="provincia" ng-model="nuovodemolitore.provincia">
+                </div>
+            
+                <div class="form-group col-md-6">
+                    <label for="cap">Cap</label>
+                    <input type="text" class="form-control" id="cap" ng-model="nuovodemolitore.cap">
+                </div>
+            </div>
+
+            <div class="form-row">
+            
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" ng-model="nuovodemolitore.email">
+                </div>
+            
+                <div class="form-group col-md-6">
+                    <label for="foto">Foto</label>
+                    <input type="text" class="form-control" id="foto" ng-model="nuovodemolitore.foto">
+                </div>
+            </div>
+
+            <div class="form-row">
+            
+                <div class="form-group col-md-6">
+                    <label for="officina">Officina</label>
+                    <input type="text" class="form-control" id="officina" ng-model="nuovodemolitore.officina">
+                </div>
+            
+            </div>
+
+            <button class="btn btn-primary">Inserisci demolitore</button>
+        
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+
+</div>

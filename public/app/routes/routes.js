@@ -21,10 +21,6 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
             },
         }
     })
-
-
-
-
     .state('autodettaglio', {
             url: '/auto/{id:[0-9a-f]{24}}',
             templateUrl: '/public/auto/page/autodettaglio.html',
@@ -37,11 +33,29 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
 
             }
         })
-   
+    .state('demolitore', {
+        url: '/demolitore',
+        templateUrl: '/public/demolitori/page/demolitori.html',
+            controller: 'demolitoriController',
+            // prima di entrare in questa rotta risolvimi delle proprieta
+            resolve: {
+                demolitore: async function (demolitoreService) {
+                    var risposta = await demolitoreService.listaDemolitori()
+                    return risposta.data
+                },
+            }
+        })
+    .state('demolitoredettaglio', {
+            url: '/demolitore/{id:[0-9a-f]{24}}',
+            templateUrl: '/public/demolitori/page/demolitoredettaglio.html',
+            controller: 'demolitoreController',
+            resolve: {
+                demolitore: async function (demolitoreService, $stateParams) {
+                    var risposta = await demolitoreService.cercaDemolitore($stateParams.id)
+                    return risposta.data
+                },
 
-
-
-    
-        
+            }
+        })
     }
 )

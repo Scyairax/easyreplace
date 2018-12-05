@@ -1,0 +1,69 @@
+<form ng-submit="modificaDemolitore()">
+    <div class="form-row">
+
+        <div class="form-group col-md-6">
+            <label for="denominazione">Denominazione</label>
+            <input type="text" class="form-control" id="denominazione" ng-model="demolitore.denominazione">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="p_iva">Partita iva</label>
+            <input type="text" class="form-control" id="p_iva" ng-model="demolitore.p_iva">
+        </div>
+
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group col-md-6">
+            <label for="comune">Comune</label>
+            <input type="text" class="form-control" id="comune" ng-model="demolitore.comune">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="indirizzo">Indirizzo</label>
+            <input type="text" class="form-control" id="indirizzo" ng-model="demolitore.indirizzo">
+        </div>
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group col-md-6">
+            <label for="provincia">Provincia</label>
+            <input type="text" class="form-control" id="provincia" ng-model="demolitore.provincia">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="cap">Cap</label>
+            <input type="text" class="form-control" id="cap" ng-model="demolitore.cap">
+        </div>
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" ng-model="demolitore.email">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="foto">Foto</label>
+            <input type="text" class="form-control" id="foto" ng-model="demolitore.foto">
+        </div>
+    </div>
+
+    <div class="form-row">
+
+        <div class="form-group col-md-6">
+            <label for="officina">Officina</label>
+            <input type="text" class="form-control" id="officina" ng-model="demolitore.officina">
+        </div>
+
+    </div>
+
+    <button class="btn btn-primary">Modifica</button>
+
+</form>
+<br>
+<button type="submit" class="btn btn-danger" ng-click="eliminaDemolitore(demolitore._id)">Elimina</button>
+
