@@ -10,7 +10,7 @@ var creaAuto = function(nuovo){
         url:'/api/auto',
         method:'POST',
         data: nuovo
-    })
+    })//
 }
 
 var eliminaAuto = function(id) {

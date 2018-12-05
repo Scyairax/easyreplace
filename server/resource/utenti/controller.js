@@ -27,9 +27,18 @@ module.exports = (function() {
         }
     }
 
-    var listaUtenti = async (req, res) => {
+    var listaUtenti = async (req, res) => { 
+
+        var tipo = req.query.tipo;
+
         try {
-            var utenti = await Utente.find()
+            if (!tipo) { 
+                var utenti = await Utente.find()
+
+                res.json(utenti)
+            }
+                
+            var utenti = await Utente.find({tipo:tipo})
             res.json(utenti)
         }
         catch (err) {
