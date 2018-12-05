@@ -22,14 +22,14 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
         }
     })
 
-
+    
 
 
     .state('autodettaglio', {
-            url: '/auto/{id:[0-9a-f]{24}}',
-            templateUrl: '/public/auto/page/autodettaglio.html',
-            controller: 'autoController',
-            resolve: {
+            url: '/auto/{id:[0-9a-f]{24}}',//rotta della risorsa memorizzata nel suo index ma è il service a collegare  eservire
+            templateUrl: '/public/auto/page/autodettaglio.html',//rotta del template da caricare
+            controller: 'autoController',//controller che ascolta la chiamata
+            resolve: {//azione da lanciare nel momento in si scatena l'evento
                 auto: async function (autoService, $stateParams) {
                     var risposta = await autoService.cercaAuto($stateParams.id)
                     return risposta.data
@@ -38,10 +38,18 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
             }
         })
    
-
-
-
-    
+        .state('ricambi', {
+            url: '/ricambi',
+            templateUrl: 'public/ricambi/page/ricambio.html',
+            controller: 'ricambioCtrlr',
+            resolve: {
+                ricambi: async function (ricambioService) {
+                    var risposta = await ricambioService.listaRicambi()
+                    return risposta.data;
+              //
+                },
+            }
+        })
         
     }
 )

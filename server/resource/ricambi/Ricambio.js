@@ -14,7 +14,7 @@ var ricambioSchema = new mongoose.Schema({
          ref: "TipoRicambi",
          lowercase: true
      },
-    cod_pezzo: {
+    cod_ricambio: {
 
         type: String,
         index: true,
