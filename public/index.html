@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,14 +11,20 @@
     integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
      crossorigin="anonymous">
      <!-- link a bootstrap CSS nativo -->
-     <link rel="stylesheet" src="/bootstrap/css/bootstrap.min.css">
+     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
      <!-- link css table -->
-     <link rel="stylesheet" src="/css/stile.css">
-
+     <link rel="stylesheet" href="/css/stile.css">
+    <base href="/">
 </head>
+
+
+
+
 <body ng-app="app">
-
-
+<div ng-include="'/public/navbar.html'"></div>
+<div class="container-fluid mt-5">
+<div ui-view></div>
+</div>
 </body>
 <!-- script di inizializzazione | angular | richamo di app | richamo di ui-router | richamo di routes lato client | -->
 <script src="/angular/angular.min.js"></script>
@@ -31,9 +38,9 @@
 <script src="/jquery/jquery.min.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
 
-
-
-
-
+<script src="/public/auto/autoController.js"></script>
+<script src="/public/auto/autosController.js"></script>
+<script src="/public/auto/autoServices.js"></script>
+<script src="/public/app/filter.js"></script>
 
 </html>
