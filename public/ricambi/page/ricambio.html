@@ -13,7 +13,7 @@
                 <tbody>
                     <!-- auto è stato definito nel controller mentre autos è un elemento generico -->
                     <tr ng-repeat="ricambio in ricambi track by ricambio._id">
-                        <td ng-bind='ricambio.tipo_ricambio'></td>
+                        <td ng-bind='ricambio.tipo_ricambio.nome'></td>
                         <td ng-bind='ricambio.prezzo'></td>
                         <td ng-bind='ricambio.cod_ricambio'></td>
                         <td ng-bind='ricambio.scorte'></td>

@@ -6,6 +6,8 @@ angular.module('app').service('ricambioService', function ($http) {
         })
     }
 
+    
+
     return {
     listaRicambi:listaRicambi
     

@@ -46,7 +46,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
                 ricambi: async function (ricambioService) {
                     var risposta = await ricambioService.listaRicambi()
                     return risposta.data;
-              //
+              
                 },
             }
         })

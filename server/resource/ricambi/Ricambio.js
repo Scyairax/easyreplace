@@ -9,9 +9,9 @@ var ricambioSchema = new mongoose.Schema({
         lowercase: true
     },
     
-     tipo_ricambio: {
+     tipo_ricambio: {//richiamato dal populate 
          type: mongoose.Schema.Types.ObjectId,
-         ref: "TipoRicambi",
+         ref: "tipo_ricambi",//nome con cui ho esprotato il modello
          lowercase: true
      },
     cod_ricambio: {

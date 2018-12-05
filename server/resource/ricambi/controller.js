@@ -1,6 +1,6 @@
 module.exports = (function() {
     var Ricambio = require('./Ricambio')
-
+    var tipo_rica = require('../tipo_ricambi/TipoRicambi')
 
     var modificaRicambio = async (req, res) => {
         try {
@@ -24,7 +24,8 @@ module.exports = (function() {
 
     var listaRicambi = async (req, res) => {
         try {
-            var listaricambi = await Ricambio.find()
+            var listaricambi = await Ricambio.find().
+            populate('tipo_ricambio')     
             res.json(listaricambi)
         }
         catch (err) {
