@@ -1,0 +1,101 @@
+<div class="row">
+    <div class="col-8 table-responsive">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modello</th>
+                    <th scope="col">Cilindrata</th>
+                    <th scope="col">Alimentazione</th>
+                    <th scope="col">porte</th>
+                    <th scope="col">Versione</th>
+                    <th scope="col">Dettaglio</th>
+                    <th scope="col">Elimina</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <!-- auto è stato definito nel controller mentre autos è un elemento generico -->
+                <tr ng-repeat="autos in auto track by autos._id">
+                    <td ng-bind='autos.marca'></td>
+                    <td ng-bind='autos.modello'></td>
+                    <td ng-bind='autos.cilindrata'></td>
+                    <td ng-bind='autos.alimentazione'></td>
+                    <td ng-bind='autos.n_porte'></td>
+                    <td ng-bind='autos.versione'></td>
+                    <td><a class="btn btn-primary" ui-sref="autodettaglio({id:autos._id})"> Dettaglio</a></td>
+                    <td><button class="btn btn-primary" ng-click="eliminaAuto(autos._id)">Elimina</button></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+    <div class="col-4">
+        <form ng-submit="creaAuto()">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="marca">Marca</label>
+                    <input type="text" class="form-control" id="marca" ng-model="nuovaauto.marca">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="porte">Porte</label>
+                    <select class="form-control" id="porte" ng-model="nuovaauto.n_porte">
+                        <option value="3">3</option>
+                        <option value="5">5</option>
+                        <option value="7">7</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="form-row">
+
+
+                <div class="form-group col-md-6">
+                    <label for="modello">Modello</label>
+                    <input type="text" class="form-control" id="modello" ng-model="nuovaauto.modello">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="colore">Colore</label>
+                    <input type="text" class="form-control" id="colore" ng-model="nuovaauto.colore">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">Alimentazione</label>
+                <input type="text" class="form-control" id="inputAddress2" ng-model="nuovaauto.alimentazione">
+            </div>
+            <div class="form-group">
+                <label for="versione">Versione</label>
+                <select class="form-control" id="versione" ng-model="nuovaauto.versione">
+                    <option value="multijet">multijet</option>
+                    <option value="ds">ds</option>
+                    <option value="abarth">abarth</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">Cilindrata</label>
+                <input type="text" class="form-control" id="inputAddress2" ng-model="nuovaauto.cilindrata">
+            </div>
+
+
+            <button class="btn btn-primary">Crea</button>
+
+        </form>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+</div>

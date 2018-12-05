@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,5 +36,27 @@
 
 
 
+    <link rel="stylesheet" href="/dist/css/bootstrap.min.css">
+    <base href="/">
+    <title>Document</title>
+</head>
+
+<body ng-app="app">
+    <div ng-include="'/public/navbar.html'"></div>
+    <div class="container-fluid mt-5">
+    <div ui-view></div>
+</div>
+</body>
+<script src="/dist/js/bootstrap.min.js"></script>
+<script src="/angular/angular.min.js"></script>
+<script src="/ui-router/angular-ui-router.min.js"></script>
+
+<script src="/public/app/app.js"></script>
+<script src="/public/app/routes/router.js"></script>
+
+<script src="/public/auto/autoController.js"></script>
+<script src="/public/auto/autosController.js"></script>
+<script src="/public/auto/autoServices.js"></script>
+<script src="/public/app/filter.js"></script>
 
 </html>
