@@ -41,7 +41,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
         .state('ricambi', {
             url: '/ricambi',
             templateUrl: 'public/ricambi/page/ricambio.html',
-            controller: 'ricambioCtrlr',
+            controller: 'ricambiCtrlr',
             resolve: {
                 ricambi: async function (ricambioService) {
                     var risposta = await ricambioService.listaRicambi()

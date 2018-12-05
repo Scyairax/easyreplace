@@ -1,8 +1,6 @@
 angular.module('app').controller('autosController', function ($scope, auto, autoService) {
 
-    $scope.auto = auto
-
-
+   $scope.auto = auto
 
     $scope.eliminaAuto = function (id) {
         autoService.eliminaAuto(id)
