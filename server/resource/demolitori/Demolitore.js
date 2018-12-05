@@ -61,7 +61,7 @@ var demolitoreSchema = new mongoose.Schema(
     },
     officina: [{
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Utenti',                           // solo per utenti di tipo officina
+        ref: 'utente',                           // solo per utenti di tipo officina
     }],
 })
 

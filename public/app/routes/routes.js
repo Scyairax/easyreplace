@@ -36,26 +36,61 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
     .state('demolitore', {
         url: '/demolitore',
         templateUrl: '/public/demolitori/page/demolitori.html',
-            controller: 'demolitoriController',
-            // prima di entrare in questa rotta risolvimi delle proprieta
-            resolve: {
-                demolitore: async function (demolitoreService) {
-                    var risposta = await demolitoreService.listaDemolitori()
-                    return risposta.data
-                },
-            }
-        })
+        controller: 'demolitoriController',
+        // prima di entrare in questa rotta risolvimi delle proprieta
+        resolve: {
+            demolitore: async function (demolitoreService) {
+                var risposta = await demolitoreService.listaDemolitori()
+                return risposta.data
+            },
+        }
+    })
     .state('demolitoredettaglio', {
-            url: '/demolitore/{id:[0-9a-f]{24}}',
-            templateUrl: '/public/demolitori/page/demolitoredettaglio.html',
-            controller: 'demolitoreController',
-            resolve: {
-                demolitore: async function (demolitoreService, $stateParams) {
-                    var risposta = await demolitoreService.cercaDemolitore($stateParams.id)
-                    return risposta.data
-                },
+        url: '/demolitore/{id:[0-9a-f]{24}}',
+        templateUrl: '/public/demolitori/page/demolitoredettaglio.html',
+        controller: 'demolitoreController',
+        resolve: {
+            demolitore: async function (demolitoreService, $stateParams) {
+                var risposta = await demolitoreService.cercaDemolitore($stateParams.id)
+                return risposta.data
+            },
+            officine: async function (utenteService) {
+                var risposta = await utenteService.listaOfficine()
+                return risposta.data
+            },
 
-            }
-        })
+        }
+    })
+    .state('utente', {
+        url: '/utente',
+        templateUrl: '/public/utenti/page/utenti.html',
+        controller: 'utentiController',
+        // prima di entrare in questa rotta risolvimi delle proprieta
+        resolve: {
+            utente: async function (utenteService) {
+                var risposta = await utenteService.listaUtenti()
+                return risposta.data
+            },
+            officine: async function (utenteService) {
+                var risposta = await utenteService.listaOfficine()
+                return risposta.data
+            },
+        }
+    })
+    .state('utentedettaglio', {
+        url: '/utente/{id:[0-9a-f]{24}}',
+        templateUrl: '/public/utenti/page/utentedettaglio.html',
+        controller: 'utenteController',
+        resolve: {
+            utente: async function (utenteService, $stateParams) {
+                var risposta = await utenteService.cercaUtente($stateParams.id)
+                return risposta.data
+            },
+
+        }
+    })
+
+
+
     }
 )

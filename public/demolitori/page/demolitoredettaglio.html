@@ -56,7 +56,9 @@
 
         <div class="form-group col-md-6">
             <label for="officina">Officina</label>
-            <input type="text" class="form-control" id="officina" ng-model="demolitore.officina">
+            <select ng-model="demolitore.officina"  class="form-control">
+                <option ng-repeat="off in officine" ng-bind="off.denominazione" value="{{off._id}}"></option>
+            </select>
         </div>
 
     </div>

@@ -1,5 +1,6 @@
 module.exports = (function () {
     var Demolitore = require('./Demolitore')
+    var Officina = require('../utenti/Utente')
 
   
     var creaDemolitore = (req, res) => {
@@ -31,6 +32,7 @@ module.exports = (function () {
     var listaDemolitori = async (req, res) => {
         try {
             var demolitori = await Demolitore.find()
+                .populate('officina')
             res.json(demolitori)
         }
         catch (err) {

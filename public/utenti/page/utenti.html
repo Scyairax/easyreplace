@@ -1,0 +1,175 @@
+<div class="row">
+    <div class="col-8 table-responsive">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Foto</th>
+                    <th scope="col">Cognome</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Codice fiscale</th>
+                    <th scope="col">Data nascita</th>
+                    <th scope="col">Comune</th>
+                    <th scope="col">Indirizzo</th>
+                    <th scope="col">Provincia</th>
+                    <th scope="col">Cap</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Tipo</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- auto è stato definito nel controller mentre autos è un elemento generico -->
+                <tr ng-repeat="utente1 in utente track by $index">
+                    <td ng-bind='utente1.foto'></td>
+                    <td ng-bind='utente1.cognome'></td>
+                    <td ng-bind='utente1.nome'></td>
+                    <td ng-bind='utente1.codice_fiscale'></td>
+                    <td ng-bind='utente1.data_nascita'></td>
+                    <td ng-bind='utente1.comune'></td>
+                    <td ng-bind='utente1.indirizzo'></td>
+                    <td ng-bind='utente1.provincia'></td>
+                    <td ng-bind='utente1.cap'></td>
+                    <td ng-bind='utente1.telefono'></td>
+                    <td ng-bind='utente1.email'></td>
+                    <td ng-bind='utente1.tipo'></td>
+                    <td><a class="btn btn-primary" ui-sref="utentedettaglio({id:utente1._id})"> Dettaglio</a></td>
+                    <td><button class="btn btn-primary" ng-click="eliminaUtente(utente1._id)">Elimina</button></td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+    <div class="col-4">
+
+        <form ng-submit="creaUtente()">
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label for="cognome">Cognome</label>
+                    <input type="text" class="form-control" id="cognome" ng-model="nuovoutente.cognome">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nome" ng-model="nuovoutente.nome">
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label for="denominazione">Denominazione</label>
+                    <input type="text" class="form-control" id="denominazione" ng-model="nuovoutente.denominazione">
+                </div>
+                
+                <div class="form-group col-md-6">
+                    <label for="data_nascita">Data nascita</label>
+                    <input type="text" class="form-control" id="data_nascita" ng-model="nuovoutente.data_nascita">
+                </div>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label for="codice_fiscale">Codice fiscale</label>
+                    <input type="text" class="form-control" id="codice_fiscale" ng-model="nuovoutente.codice_fiscale">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="cap">Partita iva</label>
+                    <input type="text" class="form-control" id="partita_iva" ng-model="nuovoutente.p_iva">
+                </div>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label for="comune">Comune</label>
+                    <input type="text" class="form-control" id="comune" ng-model="nuovoutente.comune">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="indirizzo">Indirizzo</label>
+                    <input type="text" class="form-control" id="indirizzo" ng-model="nuovoutente.indirizzo">
+                </div>
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <label for="provincia">Provincia</label>
+                    <input type="text" class="form-control" id="provincia" ng-model="nuovoutente.provincia">
+                </div>
+                
+                <div class="form-group col-md-6">
+                    <label for="cap">Cap</label>
+                    <input type="text" class="form-control" id="cap" ng-model="nuovoutente.cap">
+                </div>
+
+            </div>
+
+            <div class="form-row">
+            
+                <div class="form-group col-md-6">
+                    <label for="telefono">Telefono</label>
+                    <input type="text" class="form-control" id="telefono" ng-model="nuovoutente.telefono">
+                </div>
+            
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" ng-model="nuovoutente.email">
+                </div>
+            
+            </div>
+
+
+            <div class="form-row">
+            
+                <div class="form-group col-md-6">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" ng-model="nuovoutente.username">
+                </div>
+            
+                <div class="form-group col-md-6">
+                    <label for="password">Password</label>
+                    <input type="text" class="form-control" id="password" ng-model="nuovoutente.password">
+                </div>
+            
+            </div>
+
+
+            <div class="form-row">
+            
+                <div class="form-group col-md-6">
+                    <label for="foto">Foto</label>
+                    <input type="text" class="form-control" id="foto" ng-model="nuovoutente.foto">
+                </div>
+            
+                <div class="form-group col-md-6">
+                    <label for="tipo">Tipo</label>
+
+                    <select class="form-control" id="tipo" ng-model="nuovoutente.tipo">
+                        <option value="utente">Utente</option>
+                        <option value="officina">Officina</option>
+                    </select>
+
+                </div>
+
+
+            
+                
+            
+            </div>
+
+            <button class="btn btn-primary">Inserisci utente</button>
+
+        </form>
+        
+    </div>
+</div>

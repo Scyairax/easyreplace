@@ -1,6 +1,7 @@
-angular.module('app').controller('demolitoreController', function ($scope, demolitore, demolitoreService, $state) {
+angular.module('app').controller('demolitoreController', function ($scope, demolitore, demolitoreService, $state, officine) {
 
     $scope.demolitore = demolitore
+    $scope.officine = officine
     //console.log($scope.demolitore)
 
     $scope.eliminaDemolitore = function (id) {

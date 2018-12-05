@@ -28,7 +28,7 @@
                     <td ng-bind='demolitore1.provincia'></td>
                     <td ng-bind='demolitore1.cap'></td>
                     <td ng-bind='demolitore1.email'></td>
-                    <td ng-bind='demolitore1.officina'></td>
+                    <td><span ng-repeat="off in demolitore1.officina" ng-bind="off.denominazione"></span></td>
                     <td><a class="btn btn-primary" ui-sref="demolitoredettaglio({id:demolitore1._id})"> Dettaglio</a></td>
                     <td><button class="btn btn-primary" ng-click="eliminaDemolitore(demolitore1._id)">Elimina</button></td>
                 </tr>

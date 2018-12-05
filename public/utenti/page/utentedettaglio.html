@@ -1,0 +1,123 @@
+<form ng-submit="modificaUtente()">
+
+    <div class="form-row">
+    
+        <div class="form-group col-md-6">
+            <label for="cognome">Cognome</label>
+            <input type="text" class="form-control" id="cognome" ng-model="utente.cognome">
+        </div>
+    
+        <div class="form-group col-md-6">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" id="nome" ng-model="utente.nome">
+        </div>
+    
+    </div>
+    
+    <div class="form-row">
+    
+        <div class="form-group col-md-6">
+            <label for="denominazione">Denominazione</label>
+            <input type="text" class="form-control" id="denominazione" ng-model="utente.denominazione">
+        </div>
+    
+        <div class="form-group col-md-6">
+            <label for="data_nascita">Data nascita</label>
+            <input type="text" class="form-control" id="data_nascita" ng-model="utente.data_nascita">
+        </div>
+    </div>
+    
+    <div class="form-row">
+    
+        <div class="form-group col-md-6">
+            <label for="codice_fiscale">Codice fiscale</label>
+            <input type="text" class="form-control" id="codice_fiscale" ng-model="utente.codice_fiscale">
+        </div>
+    
+        <div class="form-group col-md-6">
+            <label for="cap">Partita iva</label>
+            <input type="text" class="form-control" id="partita_iva" ng-model="utente.p_iva">
+        </div>
+    </div>
+    
+    <div class="form-row">
+    
+        <div class="form-group col-md-6">
+            <label for="comune">Comune</label>
+            <input type="text" class="form-control" id="comune" ng-model="utente.comune">
+        </div>
+    
+        <div class="form-group col-md-6">
+            <label for="indirizzo">Indirizzo</label>
+            <input type="text" class="form-control" id="indirizzo" ng-model="utente.indirizzo">
+        </div>
+    </div>
+    
+    <div class="form-row">
+    
+        <div class="form-group col-md-6">
+            <label for="provincia">Provincia</label>
+            <input type="text" class="form-control" id="provincia" ng-model="utente.provincia">
+        </div>
+    
+        <div class="form-group col-md-6">
+            <label for="cap">Cap</label>
+            <input type="text" class="form-control" id="cap" ng-model="utente.cap">
+        </div>
+    
+    </div>
+    
+    <div class="form-row">
+    
+        <div class="form-group col-md-6">
+            <label for="telefono">Telefono</label>
+            <input type="text" class="form-control" id="telefono" ng-model="utente.telefono">
+        </div>
+    
+        <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" ng-model="utente.email">
+        </div>
+    
+    </div>
+    
+    
+    <div class="form-row">
+    
+        <div class="form-group col-md-6">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" ng-model="utente.username">
+        </div>
+    
+        <div class="form-group col-md-6">
+            <label for="password">Password</label>
+            <input type="text" class="form-control" id="password" ng-model="utente.password">
+        </div>
+    
+    </div>
+    
+    
+    <div class="form-row">
+    
+        <div class="form-group col-md-6">
+            <label for="foto">Foto</label>
+            <input type="text" class="form-control" id="foto" ng-model="utente.foto">
+        </div>
+    
+        <div class="form-group col-md-6">
+            <label for="tipo">Tipo</label>
+    
+            <select class="form-control" id="tipo" ng-model="utente.tipo">
+                <option value="utente">Utente</option>
+                <option value="officina">Officina</option>
+            </select>
+    
+        </div>
+    
+    </div>
+
+    <button class="btn btn-primary">Modifica</button>
+
+</form>
+<br>
+<button type="submit" class="btn btn-danger" ng-click="eliminaUtente(utente._id)">Elimina</button>

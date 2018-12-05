@@ -29,8 +29,13 @@ module.exports = (function() {
 
     var listaUtenti = async (req, res) => {
         try {
-            var utenti = await Utente.find()
-            res.json(utenti)
+            if(req.query.tipo){
+                var utenti = await Utente.find({tipo:req.query.tipo})
+                res.json(utenti)
+            }else{
+                var utenti = await Utente.find()
+                res.json(utenti)
+            }
         }
         catch (err) {
             res.json(err)
