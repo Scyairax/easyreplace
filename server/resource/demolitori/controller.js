@@ -1,6 +1,7 @@
 module.exports = (function () {
     var Demolitore = require('./Demolitore')
 
+  
     var creaDemolitore = (req, res) => {
         var creademolitore = new Demolitore(req.body);
         console.log(req.body);

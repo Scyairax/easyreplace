@@ -33,6 +33,11 @@ var ricambioSchema = new mongoose.Schema({
         type: String,
         index: true,
         lowercase: true
+    },
+    colore: {
+        type: String,
+        index: true,
+        lowercase: true
     }
     
 })

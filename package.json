@@ -10,8 +10,15 @@
   "author": "andrea cattarozzi, alessio ciraci, ivan ricci",
   "license": "ISC",
   "dependencies": {
+    "@uirouter/angularjs": "^1.0.20",
+    "angular": "^1.7.5",
     "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.3",
     "express": "^4.16.4",
-    "mongoose": "^5.3.14"
+    "jquery": "^3.3.1",
+    "mongoose": "^5.3.14",
+    "path": "^0.12.7",
+    "popper": "^1.0.1",
+    "popper.js": "^1.14.6"
   }
 }
