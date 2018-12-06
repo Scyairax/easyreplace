@@ -1,0 +1,38 @@
+<form ng-submit="modificaAuto()">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Modello</label>
+            <input type="text" class="form-control" id="inputEmail4" ng-model="auto.modello" >
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Marca</label>
+            <input type="text" class="form-control" id="inputPassword4" ng-model="auto.marca" >
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">Colore</label>
+        <input type="text" class="form-control" id="inputAddress" ng-model="auto.colore" >
+    </div>
+    <div class="form-group">
+        <label for="inputAddress2">Alimentazione</label>
+        <input type="text" class="form-control" id="inputAddress2" ng-model="auto.alimentazione" >
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">Versione</label>
+        <input type="text" class="form-control" id="inputAddress" ng-model="auto.versione" >
+    </div>
+    <div class="form-group">
+        <label for="inputAddress2">Cilindrata</label>
+        <input type="text" class="form-control" id="inputAddress2" ng-model="auto.cilindrata" >
+    </div>
+    <button class="btn btn-primary">Modifica</button>
+    </form>
+    <br>
+    <button type="submit" class="btn btn-danger" ng-click="eliminaAuto(auto._id)">Elimina</button>
+    
+    
+    
+    
+    </div>
+    </div>
+    </div>

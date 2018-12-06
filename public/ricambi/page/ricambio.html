@@ -18,7 +18,7 @@
                         <td ng-bind='ricambio.cod_ricambio'></td>
                         <td ng-bind='ricambio.scorte'></td>
                         <td ng-bind='ricambio.descrizione'></td>
-                        <td><a class="btn btn-primary" ui-sref="autodettaglio({id:autos._id})"> Dettaglio</a></td>
+                        <td><a class="btn btn-primary" ui-sref="ricambioDettaglio({id:ricambio._id})"> Dettaglio</a></td>
                         <td><button class="btn btn-primary" ng-click="eliminaRicambio(ricambio._id)">Elimina</button></td><!----questa funzione elimina è la funzione che si trova dentro al controller del client nella  risorsa che porta lo stesso nome-->
                     </tr>
                 </tbody>
@@ -30,12 +30,8 @@
             <form ng-submit="creaAuto()">
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <label for="marca">Marca</label>
-                        <input type="text" class="form-control" id="marca" ng-model="nuovaauto.marca">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="porte">Porte</label>
-                        <select class="form-control" id="porte" ng-model="nuovaauto.n_porte">
+                        <label for="porte">tipo ricambio</label>
+                        <select class="form-control" id="" ng-model="nuovaauto.n_porte">
                             <option value="3">3</option>
                             <option value="5">5</option>
                             <option value="7">7</option>
@@ -47,29 +43,21 @@
     
     
                     <div class="form-group col-md-6">
-                        <label for="modello">Modello</label>
+                        <label for="modello">prezzo</label>
                         <input type="text" class="form-control" id="modello" ng-model="nuovaauto.modello">
                     </div>
     
                     <div class="form-group col-md-6">
-                        <label for="colore">Colore</label>
+                        <label for="colore">cod_ricambio</label>
                         <input type="text" class="form-control" id="colore" ng-model="nuovaauto.colore">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputAddress2">Alimentazione</label>
+                    <label for="inputAddress2">scorte</label>
                     <input type="text" class="form-control" id="inputAddress2" ng-model="nuovaauto.alimentazione">
                 </div>
                 <div class="form-group">
-                    <label for="versione">Versione</label>
-                    <select class="form-control" id="versione" ng-model="nuovaauto.versione">
-                        <option value="multijet">multijet</option>
-                        <option value="ds">ds</option>
-                        <option value="abarth">abarth</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="inputAddress2">Cilindrata</label>
+                    <label for="inputAddress2">descrizione</label>
                     <input type="text" class="form-control" id="inputAddress2" ng-model="nuovaauto.cilindrata">
                 </div>
     
